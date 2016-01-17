@@ -1,0 +1,34 @@
+{
+  "name": "@weo-edu/frontend-webpack",
+  "description": "Frontend webpack boilerplate",
+  "repository": "git://github.com/weo-edu/frontend-webpack.git",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "make build",
+    "postpublish": "make clean",
+    "postversion": "git push && git push --tags && npm publish --access=public"
+  },
+  "dependencies": {
+    "@f/domready": "^1.0.0",
+    "babel-loader": "^6.2.1",
+    "babel-register": "^6.4.3",
+    "express": "^4.13.3",
+    "file-loader": "^0.8.5",
+    "redux-effects": "^0.4.3",
+    "redux-multi": "^0.1.12",
+    "url-loader": "^0.5.7",
+    "vdux": "^2.1.1",
+    "webpack": "^1.12.11",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.6.0",
+    "webpack-isomorphic-tools": "^2.2.25"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-2": "^6.3.13",
+    "tape": "^4.2.0"
+  }
+}
