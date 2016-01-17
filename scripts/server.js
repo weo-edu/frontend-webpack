@@ -2,12 +2,12 @@
  * Imports
  */
 
-import express from 'express'
-import webpack from 'webpack'
+import render, {replace} from './render'
 import dev from 'webpack-dev-middleware'
 import hot from 'webpack-hot-middleware'
 import config from '../webpack.config'
-import render from './render'
+import express from 'express'
+import webpack from 'webpack'
 
 /**
  * Constants
@@ -34,6 +34,17 @@ app.use(hot(compiler, {
  */
 
 app.use(render)
+
+/**
+ * Setup server-side hmr
+ */
+
+let first = true
+compiler.plugin('done', stats => {
+  stats = stats.toJson()
+  if (first) first = false
+  else replace(stats.modules)
+})
 
 /**
  * Listen

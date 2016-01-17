@@ -9,7 +9,7 @@ import element from 'vdux/element'
  */
 
 function render () {
-  return <div>Hello world!!!!</div>
+  return <div>Hello world!</div>
 }
 
 /**
